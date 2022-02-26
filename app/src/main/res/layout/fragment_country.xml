@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="selectedCountry"
+            type="com.icanerdogan.countriesapp.model.Country" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".view.CountryFragment"
+        android:gravity="center"
+        android:layout_margin="50dp"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="2"
+            android:layout_margin="5dp"
+            android:padding="10dp">
+
+            <ImageView
+                android:id="@+id/imageViewCountryFlag"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@color/teal_200"
+                android:downloadURL="@{selectedCountry.countryFlagURL}"
+                android:scaleType="fitCenter">
+            </ImageView>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:layout_margin="5dp"
+            android:padding="10dp">
+            <TextView
+                android:id="@+id/textViewCountryName"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:hint="Country Name"
+                android:textSize="27sp"
+                android:text="@{selectedCountry.countryName}"
+                android:textColor="@color/black"
+                android:fontFamily="sans-serif-medium"
+                android:gravity="center">
+            </TextView>
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:layout_margin="5dp"
+            android:padding="10dp">
+            <TextView
+                android:id="@+id/textViewCountryCapital"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:hint="Country Capital"
+                android:text="@{selectedCountry.countryCapital}"
+                android:textSize="27sp"
+                android:textColor="@color/black"
+                android:fontFamily="sans-serif-medium"
+                android:gravity="center">
+            </TextView>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:layout_margin="5dp"
+            android:padding="10dp">
+            <TextView
+                android:id="@+id/textViewCountryRegion"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="@{selectedCountry.countryRegion}"
+                android:hint="Country Region"
+                android:textSize="27sp"
+                android:textColor="@color/black"
+                android:fontFamily="sans-serif-medium"
+                android:gravity="center">
+            </TextView>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:layout_margin="5dp"
+            android:padding="10dp">
+            <TextView
+                android:id="@+id/textViewCountryCurrency"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="@{selectedCountry.countryCurrency}"
+                android:hint="Country Currency"
+                android:textSize="27sp"
+                android:textColor="@color/black"
+                android:fontFamily="sans-serif-medium"
+                android:gravity="center">
+            </TextView>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:layout_margin="5dp"
+            android:padding="10dp">
+            <TextView
+                android:id="@+id/textViewCountryLanguage"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="@{selectedCountry.countryLanguage}"
+                android:hint="Country Language"
+                android:textSize="27sp"
+                android:textColor="@color/black"
+                android:fontFamily="sans-serif-medium"
+                android:gravity="center">
+            </TextView>
+        </LinearLayout>
+    </LinearLayout>
+</layout>

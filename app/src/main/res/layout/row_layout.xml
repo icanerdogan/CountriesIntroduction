@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <variable
+            name="country"
+            type="com.icanerdogan.countriesapp.model.Country" />
+
+        <variable
+            name="listener"
+            type="com.icanerdogan.countriesapp.adapter.CountryClickListener" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:onClick="@{listener::onCountryClicked}"
+        android:orientation="horizontal">
+
+        <!--RecyclerViewAdapter içinde onCountryClicked fonskiyonuna kullanmak için gizli olarak oluşturdum.-->
+        <TextView
+            android:id="@+id/textViewCountryUUID"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:visibility="gone"
+            android:text="@{String.valueOf(country.uuid)}">
+        </TextView>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="150dp"
+            android:layout_weight="2">
+
+            <ImageView
+                android:id="@+id/imageViewRowCountryFlag"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:downloadURL="@{country.countryFlagURL}"
+                android:src="@color/teal_200" />
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="3"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/textViewRowCountryName"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="0.5"
+                android:fontFamily="sans-serif-medium"
+                android:gravity="center"
+                android:hint="Country Name"
+                android:text="@{country.countryName}"
+                android:textSize="30sp" />
+
+            <TextView
+                android:id="@+id/textViewRowCountryRegion"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="0.5"
+                android:fontFamily="sans-serif-medium"
+                android:gravity="center"
+                android:hint="Country Region"
+                android:text="@{country.countryRegion}"
+                android:textSize="25sp" />
+
+        </LinearLayout>
+    </LinearLayout>
+</layout>
